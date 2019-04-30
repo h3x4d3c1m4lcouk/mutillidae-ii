@@ -1,0 +1,9 @@
+version: '2.1'
+
+services:
+  mutillidae-ii:
+    image: mutillidae-ii
+    build: .
+    ports:
+      - 80
+      - 443

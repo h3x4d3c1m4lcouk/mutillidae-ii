@@ -1,0 +1,11 @@
+version: '2.1'
+
+services:
+  mutillidae-ii-web-access:
+    image: mutillidae-ii
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80
+      - 443
