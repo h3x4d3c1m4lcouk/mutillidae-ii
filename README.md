@@ -16,27 +16,27 @@ The build command is as follows and needs to be run from within the same folder 
 
     $ docker build --rm -f "Dockerfile" -t mutillidae-ii:latest .
 
-Once the build is complete to run this with a persistent database and a working directory /code using the following which mapps host port 8888 to the container port 80. 
+Once the build is complete to run, with a persistent database and a working directory /code use the following which maps host port 8888 to the container port 80. 
 
 Run
 
     $ docker run -p 8888:80 -p 444:443 --rm -d --name mutillidae-ii -v mutillidae-ii-data:/var/lib/mysql -v mutillidae-ii-code:/code mutillidae-ii:latest
 
-Now on the local machine you should be able to browse to http://localhost:8888
+On the local machine you should now be able to browse to http://localhost:8888
     
 NOTE: Be careful with 'force SSL' in the application without configuring SSL first and making sure it is working as Chrome (and possibly others) seems to always redirect to SSL on localhost:8888 once enabled! 
 
 Shell
-To connect to the running image and run a bash shell
+To connect to the running image with a bash shell
 
     $ docker exec -it nnnn bash      # Where nnnn is the docker image container id reference
 
-Also runs on Windows configured to run linux docker images
+Also runs on Windows configured to run linux docker images!
 NOTE: This will also run as a Linux container under Windows. CR LF have been removed from these files which would normally cause a script not found error.
 
 More Details
 
-Dockerfile - This is the main file which builds the container using an official image from Ubuntu. It then performs the various installations using apt. 
+Dockerfile - This is the main file that builds the container using an official image from Ubuntu. It then performs the various installations using apt. 
 
 resetdb.sql - this resets the database username and password used by Mutillidae in the correct format. 
 
