@@ -40,6 +40,6 @@ WORKDIR /code
 ENTRYPOINT /code/startup.sh && bash
 # Set the label and version for the container
 LABEL Name=mutillidae-ii Version=0.0.1
-# Expose http and https (Note https not currently available)
+# Expose http and https (Note https not currently configured in this container)
 EXPOSE 80/tcp
 EXPOSE 443/tcp
